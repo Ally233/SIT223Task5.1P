@@ -37,8 +37,7 @@ pipeline {
     stage('Approval') {
       steps {
         script {
-          echo "Waiting for manual approval..."ss
-          sleep(time: 10, unit: 'SECONDS')
+          input(message: "Approval needed. Proceed with deployment?", ok: 'Deploy')
         }
       }
     }
