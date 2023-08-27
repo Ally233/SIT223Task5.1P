@@ -40,6 +40,11 @@ pipeline {
           input(message: "Approval needed. Proceed with deployment?", ok: 'Deploy')
         }
       }
+      post {
+        always {
+          sleep(time: 10, unit: 'SECONDS')
+        }
+      } 
     }
 
     stage('Deploy to Production') {
